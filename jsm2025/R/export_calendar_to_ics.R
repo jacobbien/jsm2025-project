@@ -36,7 +36,7 @@ export_calendar_to_ics <- function(schedule, file = NULL) {
     "Authors: {author}\\nSession: <a href='ww3.aievolution.com/JSMAnnual2025/Events/viewEv?ev={session_number}' target='_blank'>{session_title}</a> ({session_type})\\nChair: {chair}")
   cal$event %>% 
     calendar::ic_character() %>%
-    stringr::str_replace_all("^DTSTART", "DTSTART;TZID=America/Los_Angeles") %>% 
-    stringr::str_replace_all("^DTEND", "DTEND;TZID=America/Los_Angeles") %>% 
+    stringr::str_replace_all("^DTSTART", "DTSTART;TZID=America/Chicago") %>% 
+    stringr::str_replace_all("^DTEND", "DTEND;TZID=America/Chicago") %>% 
     writeLines(file)
 }
